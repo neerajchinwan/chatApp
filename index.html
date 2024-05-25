@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @media (max-width: 768px) {
+      .image-section {
+        display: none;
+      }
+      .form-section {
+        background-image: url('your-image-url.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+      .login-logo{
+        display: none;
+      }
+    }
+    .full-height {
+      height: 100vh;
+    }
+    .background-opacity {
+      background: rgba(255, 255, 255, 0.75);
+    }
+    .margin-and-padding-zero{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .login-logo{
+        padding: 10px 50px 15px;
+        border-radius: 15px;
+        background-color: red;
+        color: #fff;
+        font-weight: 600;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    .image-section img{
+        object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="margin-and-padding-zero container-fluid full-height d-flex align-items-center justify-content-center">
+    <div class="row login-wrapper margin-and-padding-zero full-height w-100">
+      
+      <!-- Image Section -->
+      <div class="col-md-7 image-section d-none d-md-block margin-and-padding-zero" style="position: relativee;">
+        <h2 class="login-logo">Logo</h2>
+        <img src="https://img.freepik.com/free-photo/abstract-backdrop-with-multi-colored-wave-pattern-digitally-generated-image-generated-by-ai_24640-130979.jpg?t=st=1716302787~exp=1716306387~hmac=9cb08b8ecdf75173a4c560846721e1f0e8f02fb851d719231a98cbe818dda694&w=1380" alt="Login Image" class="img-fluid full-height w-100">
+      </div>
+      
+      <!-- Form Section -->
+      <div class="col-md-5 m-auto p-10 form-section">
+        <div class="background-opacity p-4 rounded">
+          <form class="w-100">
+            <h2 class="text-center mb-4">Login</h2>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="#" class="text-muted">Forgot password?</a>
+              <a href="#" class="text-muted">Sign up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
