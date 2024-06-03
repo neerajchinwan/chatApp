@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addChatToList(dayName, [...chatTitle]) {
         const chatItem = document.createElement('div');
-        chatItem.innerHTML = `<span>${dayName}</span>`
+        chatItem.innerHTML = `<span class='each-chat-label'>${dayName}</span>`
         chatItem.classList.add('previous-chat-style');
         for(let i = 0; i < chatTitle.length; i++){
             chatItem.innerHTML += `
