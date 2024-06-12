@@ -99,6 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
     addChatToList('yesterday',[{chat:'Chat 1', link: 'https://www.linkedin.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
+    addChatToList('today',[{chat:'Chat 1', link: 'https://www.google.com/'}, {chat:'Chat 2', link: 'https://www.linkedin.com/'}]);
 
 
 
@@ -123,4 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
+
+
+    const showingMenuButton = document.querySelector('.logo-option .left-side-option div');
+    const showMenuList = document.querySelector('.logo-option .left-side-option ul');
+    showingMenuButton.addEventListener("click", () => {
+        showMenuList.classList.toggle('block-display');
+    })
+
 });
+
+
+
+
