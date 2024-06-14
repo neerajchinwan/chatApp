@@ -126,9 +126,6 @@ body, html {
     overflow-y: auto;
     margin: auto;
     border-bottom: 1px solid #ddd;
-    /* display: flex;
-    justify-content: end;
-    flex-direction: column; */
 }
 
 .chat-window::-webkit-scrollbar{
@@ -152,21 +149,37 @@ body, html {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-}
-
-/* #sidebar {
     position: relative;
-} */
+}
 
 #sidebar .bottom-section{
     /* background: ; */
     position: fixed;
-    bottom: 10px;
-    left: -10px;
+    bottom: 0;
+    left: -1.5%;
+    background-color: #282828;
 }
 
-#sidebar .bottom-section button{
-    width: 100%;
+#sidebar .bottom-section a{
+    display: inline-block;
+    width: 105%;
+    background: #363636;
+    color: #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.type-message-wrapper i{
+    color: #fff !important;
+    cursor: pointer;
+}
+.type-message-wrapper{
+    gap: 10px;
+    align-items: center;
 }
 
 .block-display{
@@ -176,7 +189,7 @@ body, html {
 .logo-option .left-side-option ul li{
     list-style: none;
     border-bottom: 1px solid #ccc;
-    padding: 10px 30px;
+    padding: 10px 45px;
     cursor: pointer;
 }
 
@@ -191,6 +204,7 @@ body, html {
     border-bottom: 0;
     margin-top: 10px;
     display: none;
+    position: absolute;
 }
 
 .previous-chat-style div div{
