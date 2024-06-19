@@ -14,6 +14,8 @@ body, html {
     padding-top: 30px;
 }
 
+
+
 .resize-handle {
     width: 10px;
     background-color: #ccc;
@@ -160,9 +162,10 @@ body, html {
     background-color: #282828;
 }
 
-#sidebar .bottom-section a{
+#sidebar .bottom-section a,
+#sidebar .bottom-section > div{
     display: inline-block;
-    width: 105%;
+    width: 100%;
     background: #363636;
     color: #ccc;
     padding-top: 10px;
@@ -171,7 +174,37 @@ body, html {
     font-weight: 600;
     border-radius: 5px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
+
+#sidebar .bottom-section > div{
+    justify-content: space-between;
+    padding-left: 30px;
+}
+
+#sidebar .bottom-section > div > div ul li{
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 45px;
+    cursor: pointer;
+}
+#sidebar .bottom-section > div{
+    position: relative;
+}
+#sidebar .bottom-section > div > div ul{
+    border: 1px solid #ccc;
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 0;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 70%;
+    width: 50%;
+    z-index: 50;
+    right: 0%;
+    background: #282828;
+}
+
 
 .type-message-wrapper i{
     color: #fff !important;

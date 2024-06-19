@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
+    
     eachChat.forEach(chat => {
         chat.addEventListener("click", function(){
             window.location.href = chat.getAttribute('data')
