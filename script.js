@@ -45,22 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // toggleSidebarButton.addEventListener('click', function() {
-    //     if (sidebar.style.display === 'none') {
-    //         sidebar.style.display = 'block';
-    //         toggleIcon.classList.remove('fa-chevron-right');
-    //         toggleIcon.classList.add('fa-chevron-left');
-    //         chatArea.classList.remove('col-md-12');
-    //         chatArea.classList.add('col-md-9');
-    //     } else {
-    //         sidebar.style.display = 'none';
-    //         toggleIcon.classList.remove('fa-chevron-left');
-    //         toggleIcon.classList.add('fa-chevron-right');
-    //         chatArea.classList.remove('col-md-9');
-    //         chatArea.classList.add('col-md-12');
-    //     }
-    // });
-
     function appendMessage(sender, message) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', sender);
@@ -113,15 +97,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevChatMenu = document.querySelectorAll('.chat-more-option');
     const eachChat = document.querySelectorAll('.each-chat-wrapper');
 
-    prevChatMenu.forEach(eachMenu => {
-        eachMenu.addEventListener("click", function(e){
-            e.stopPropagation()
-            const parentNode = this.parentElement.parentElement;
-            console.log(parentNode)
-            parentNode.querySelector('.prev-chat-menu').classList.toggle("prev-chat-menu-hide")
+    // prevChatMenu.forEach(eachMenu => {
+    //     eachMenu.addEventListener("click", function(e){
+    //         e.stopPropagation()
+    //         const parentNode = this.parentElement.parentElement;
+    //         parentNode.querySelector('.prev-chat-menu').classList.toggle("prev-chat-menu-hide")
             
-        })
-    })
+    //     })
+    // })
+
+    document.addEventListener("click", function(event) {
+        // Hide all menus when clicking anywhere else on the document
+        document.querySelectorAll('.prev-chat-menu').forEach(menu => {
+            menu.classList.add('prev-chat-menu-hide');
+        });
+    });
+    
+    prevChatMenu.forEach(eachMenu => {
+        eachMenu.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const parentNode = this.parentElement.parentElement;
+            const currentMenu = parentNode.querySelector('.prev-chat-menu');
+    
+            // Close all other menus
+            document.querySelectorAll('.prev-chat-menu').forEach(menu => {
+                if (menu !== currentMenu) {
+                    menu.classList.add('prev-chat-menu-hide');
+                }
+            });
+            document.querySelector('.sidebar-bottom-menu').classList.add('prev-chat-menu-hide')
+    
+            // Toggle the current menu
+            currentMenu.classList.toggle('prev-chat-menu-hide');
+        });
+    });
 
     
     eachChat.forEach(chat => {
@@ -134,9 +143,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const showingMenuButton = document.querySelector('.logo-option .left-side-option div');
     const showMenuList = document.querySelector('.logo-option .left-side-option ul');
-    showingMenuButton.addEventListener("click", () => {
+
+    showingMenuButton.addEventListener("click", (event) => {
+        event.stopPropagation();
         showMenuList.classList.toggle('block-display');
     })
+
+    // Hide the menu when clicking outside of it
+document.addEventListener("click", (event) => {
+    if (!showingMenuButton.contains(event.target) && !showMenuList.contains(event.target)) {
+        showMenuList.classList.remove('block-display');
+    }
+});
+
+
+    const sidebarBottomMenuIcon = document.querySelectorAll('.sidebar-bottom-menu-option');
+
+
+    document.addEventListener("click", function(event) {
+        // Hide all menus when clicking anywhere else on the document
+        document.querySelectorAll('.sidebar-bottom-menu').forEach(menu => {
+            menu.classList.add('prev-chat-menu-hide');
+        });
+    });
+    
+    sidebarBottomMenuIcon.forEach(eachMenu => {
+        eachMenu.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const parentNode = this.parentElement;
+            const currentMenu = parentNode.querySelector('ul');
+    
+            // Close all other menus
+            document.querySelectorAll('.prev-chat-menu').forEach(menu => {
+                if (menu !== currentMenu) {
+                    menu.classList.add('prev-chat-menu-hide');
+                }
+            });
+    
+            // Toggle the current menu
+            currentMenu.classList.toggle('prev-chat-menu-hide');
+        });
+    });
 
 });
 
